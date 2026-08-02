@@ -18,6 +18,17 @@ app.use(cors());
 
 app.use(express.json());
 
+// CORS
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://ai-job-match-fe.vercel.app/",
+    ],
+    credentials: true,
+  })
+);
+
 app.get("/", (req, res) => {
     res.json({
         success: true,
